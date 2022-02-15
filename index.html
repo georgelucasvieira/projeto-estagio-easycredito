@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Empréstimos, Cartão de Crédito e Refinanciamento | Easy Crédito</title>
+    <link href="https://cdn2.easycredito.com.br/assets/main/favicon-b19f02efc0c1e72b68618743da7ac6b274af36bbd15b1420e270926f88b83f40.ico" rel="shortcut icon">
+    <script src="https://kit.fontawesome.com/457ade5db9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!------------------------------------------------------------- Navigation Section ------------------------------------------------------------------>
+    <nav id="navigation">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="https://easycredito.com.br/" target="_blank">
+                    <img src="https://cdn2.easycredito.com.br/assets/main/logo-easycredito-6047341476fccf58a054d87a48cf1b8ab0f88b36b9af01dc0f54583ec18c93a7.png" />
+                </a>
+            </div>
+
+            <ul class="nav-items">
+                <li><a href="#social-proof" type="button">Como funciona </a></li>
+                <li><a href="#partners" type="button">Parceiros</a></li>
+                <li><a href="https://easyc.zendesk.com/hc/pt-br" target="_blank" type="button">Ajuda</a></li>
+            </ul>
+
+            <div class="button">
+                <a href="https://easycredito.com.br/entrar" type="button">Entrar</a>
+            </div>
+        </div>
+    </nav>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!------------------------------------------------------------- Initial Section ------------------------------------------------------------------------->
+    <section id="initial">
+        <div class="initial-container">
+            <header>
+                <div class="align-items">
+                    <div class="text">
+                        <h1>Encontre a melhor solução de Crédito</h1>
+                        <p>O EasyCrédito é o maior buscador de Empréstimo Pessoal, Consignado, Cartão de Crédito e Refinanciamento!</p>
+                        <p style="font-weight: 600 ">O que você procura?</p>
+                    </div>
+
+                    <div class="buttons">
+                            <button onclick="openSimulatorTab(1)">
+                                <div class="background"><img src="https://cdn2.easycredito.com.br/assets/main/home/icons/emprestimo-icon-8ccbcb3da5a49098fa2e45eebf4929d2617cd307acbc0515b102c090bd946ffb.png"/></div>
+                                <span>Empréstimos</span>
+                            </button>
+                            <button onclick="openSimulatorTab(2)">
+                                <div class="background"><img src="https://cdn2.easycredito.com.br/assets/main/home/icons/cartao-icon-1a8562e68b33b26d25da2318dfb68f23d2e084b229aebf67669ee473dfcb13ae.png"/></div>
+                                <span>Cartão de Crédito</span>
+                            </button>
+                            <button onclick="openSimulatorTab(3)">
+                                <div class="background"><img src="https://cdn2.easycredito.com.br/assets/main/home/icons/refin-icon-268045649a3371a542da3a2d2ff3563dfae9ffbc4a71fc77eea8c6b03a53170d.png"/></div>
+                                <span>Refinanciamento</span>
+                            </button>
+                    </div>
+                </div>
+            </header>
+
+            <aside></aside>
+        </div>
+
+        <div id="simulator-background" class=""></div>
+
+        <div id="simulator-container" class="">
+            <div class="align-items">
+                <div id="simulator-emprestimo" class="simulator-content">
+                    <button onclick="closeSimulatorTab()" class="closeTab-button">
+                        <i class="fas fa-arrow-left fa-lg"></i>
+                    </button>
+                    <header>
+                        <div class="header-img">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/emprestimo-icon-8ccbcb3da5a49098fa2e45eebf4929d2617cd307acbc0515b102c090bd946ffb.png"/>
+                            <span>Empréstimo</span>
+                        </div>
+                        <div class="header-footer">
+                            <h3>De quanto você precisa?</h3>
+                        </div>
+                    </header>
+
+                    <div class="slider-container">
+                        <span id="emprestimo-slider-value" class="slider-value">R$ 10.000</span>
+                        <input type="range" min="500" max="50000" value="10000" id="emprestimo-slider-range" step="100" oninput="emprestimoRange()">
+                        <span id="emprestimo-slider-min-value">R$ 500</span>
+                        <span id="emprestimo-slider-max-value">R$ 50.000</span>
+                    </div>
+
+                    <div class="menu-container">
+                        <select id="select" onchange="updateMenu()">
+                            <option value="3">3 parcelas</option>
+                            <option value="6">6 parcelas</option>
+                            <option value="9">9 parcelas</option>
+                            <option value="12" selected>12 parcelas</option>
+                            <option value="18">18 parcelas</option>
+                            <option value="24">24 parcelas</option>
+                            <option value="36">36 parcelas</option>
+                            <option value="48">48 parcelas</option>
+                        </select>
+                        <span id="pgto-value">de R$1096,03*</span>
+                    </div>
+
+                    <div class="simular-gratis-button" >
+                        <a href="https://easycredito.com.br/cadastrar/etapa-1" tabindex="1">Simular Grátis</a>
+                    </div>
+
+                    <footer>
+                        <h6>* Crédito sujeito a aprovação. O valor das parcelas <span>podem</span> variar de acordo com a análise do seu perfil de crédito.</h6>
+                    </footer>
+                </div>
+
+                <div id="simulator-cartao" class="simulator-content">
+                    <button onclick="closeSimulatorTab()" class="closeTab-button ">
+                        <i class="fas fa-arrow-left fa-lg"></i>
+                    </button>
+
+                    <header>
+                        <div class="header-img">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/cartao-icon-1a8562e68b33b26d25da2318dfb68f23d2e084b229aebf67669ee473dfcb13ae.png"/>
+                            <span>Cartão de Crédito</span>
+                        </div>
+                        <div class="header-footer">
+                            <h3>Qual limite de Crédito você deseja?</h3>
+                        </div>
+                    </header>
+
+                    <div class="slider-container">
+                        <span id="cartao-slider-value" class="slider-value">R$ 10.000</span>
+                        <input type="range" min="500" max="50000" value="2800" id="cartao-slider-range" step="100" oninput="cartaoRange()">
+                        <span id="cartao-slider-min-value">R$ 500</span>
+                        <span id="cartao-slider-max-value">R$ 50.000</span>
+                    </div>
+
+                    <div class="cards-tabs">
+                        <button>
+                            <i class="fab fa-cc-visa fa-6x"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-cc-mastercard fa-6x"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-cc-paypal fa-6x"></i>
+                        </button>
+                    </div>
+
+                    <div class="simular-gratis-button" >
+                        <a href="https://easycredito.com.br/cadastrar/etapa-1" tabindex="1">Simular Cartão de Crédito</a>
+                    </div>
+                </div>
+
+                <div id="simulator-refinanciamento" class="simulator-content">
+                    <button onclick="closeSimulatorTab()" class="closeTab-button">
+                        <i class="fas fa-arrow-left fa-lg"></i>
+                    </button>
+                    <header>
+                        <div class="header-img">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/refin-icon-268045649a3371a542da3a2d2ff3563dfae9ffbc4a71fc77eea8c6b03a53170d.png"/>
+                            <span>Refinanciamento</span>
+                        </div>
+                    </header>
+                    <div id="refinanciamento-container">
+                        <div class="refinanciamento-content">
+                                <div class="refinanciamento-icon">
+                                    <i class="fas fa-car fa-3x"></i>
+                                </div>
+                                <header>
+                                    <h4>Veículo em Garantia</h4>
+                                    <span>De R$ 5 mil a R$ 300 mil</span>
+                                </header>
+                                <div class="refinanciamento-button">
+                                    <a href="https://easycredito.com.br/refinanciamento-veiculo">
+                                        <span>Simular</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                        </div>
+                        <div class="refinanciamento-content">
+                            <div class="refinanciamento-icon">
+                                <i class="fas fa-home fa-3x"></i>
+                            </div>
+                            <header>
+                                <h4>Imóvel em Garantia</h4>
+                                <span>De R$ 30 mil a R$ 3 milhões</span>
+                            </header>
+                            <div class="refinanciamento-button">
+                                <a href="https://easycredito.com.br/refinanciamento-imovel">
+                                    <span>Simular</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!---------------------------------------------------Social Proof Section ------------------------------------------------------------------------------>
+    <section id="social-proof">
+        <div class="social-proof-container">
+            <header>
+                <h3>Mais de 2 milhões de pessoas confiam em nós</h3>
+                <div class="number-img">
+                    <img src="https://cdn2.easycredito.com.br/assets/main/home/million-bede8cbc94c37ff9fcb18a2db4454a9025c1835d8571362fcc982552cb3b30b0.svg">
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/simule-gratis-fb5e9d720941cae474d8c00ca788bc88d9a7baa2da5a73881a7128632606f2b6.png">
+                    </div>
+                    <h2>Simule Grátis</h2>
+                    <h4>Escolha entre cartão de crédito, empréstimo ou refinanciamento</h4>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/resposta-rapida-b2045fcad4cb4b78704340b3ad34b37a1db6aba6388fd635c2b43b249dd86bdc.png">
+                    </div>
+                    <h2>Resposta Rápida</h2>
+                    <h4>Preencha alguns dados, assim podemos te conhecer melhor</h4>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/home/icons/dinheiro-3721a05904ff0cc721a8431679dd8c74151a06a0ae4761db397e8c09946b639f.png">
+                    </div>
+                    <h2>Dinheiro na conta</h2>
+                    <h4>Receba as melhores propostas de acordo com o seu perfil</h4>
+                </div>
+
+            </div>
+
+            <div class="testimonial">
+                <div class="container">
+                    <header><h2>Quem confia na gente</h2></header>
+                    <div class="items">
+                        <div class="testimonial-img"><img src="https://cdn2.easycredito.com.br/assets/main/testimonials/maria-isabel-412962281989908ca595a1bc2a9581557c71df6dce019f9d9801fdc85e01e5a3.png"></div>
+                        <div class="text">
+                            <p>Quero agradecer pelo carinho e atenção prestados a mim desde o primeiro contato até hoje. Excelente o trabalho de vocês! Sempre com muita transparência e agilidade. Estou muito satisfeita com a empresa e super recomendo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!---------------------------------------------------Partners Section ---------------------------------------------------------------------------------->
+    <section id="partners">
+        <div class="container">
+                <header class="header">
+                    <h1>Nossos parceiros</h1>
+                    <p>Conheça as instituições que podem trazer soluções para você</p>
+                </header>
+
+                <div class="buttons">
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/piki" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/piki-54526e830bb5164c3515654204fb22891511a5b894c651ff00fd35362d280364.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/emprestimosim" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/emprestimo-pessoal-sim-046ef4ce113084726d55763b58ee60ac1dbbad8bd2fd186e1c2118137396f4c6.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/bv" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/banco_bv-1c72785f59f953a551e4752d307f60011b8015ea4be4e32e40cf24f8c85326db.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/supersim" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/supersim-ecdbe0522cb8bcbb92deac7a4e4e8b4c32429122f07c76b74e11aec588bc8e12.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/Provu" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/logo-provu-7c7c122105777ea496d94de049632cd21944bf385236bdd2b396fc3fe2d9357b.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/cartao" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/bancopan-cartao-de-credito-a40916354cc04ec126348683df03b65f4ce8a56c0a97d6d48c42386a731b95c5.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/noverde" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/noverde-emprestimo-pessoal-69f9a34b1823a1071ce057f1ecd7af897499a16a8ae7f2202c434726ebfe89de.png"
+                            >
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/omni" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/omni-solucoes-financeiras-8c52b4098201fb8d10f85904af4cca017cb5c591d82f73b5bac78b1fbc042c0b.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/bxblue" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/bxblue-ca87cb20079c165fd2262067429c88814805ac4809f807a0dc53ed9693a541a2.png">
+                        </a>
+                    </div>
+                    <div class="button-item">
+                        <a href="https://easycredito.com.br/parceiros/jeitto" type="button">
+                            <img src="https://cdn2.easycredito.com.br/assets/main/partners/jeitto-9e93cd5dd08ca83beab79f05c6b290aa2d53282c47a17b33fc486d7b544c7cd4.png">
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+
+
+    </section>
+
+<!---------------------------------------------------Trigger Section ---------------------------------------------------------------------------------->
+    <section id="trigger">
+        <div class="container">
+            <div class="text">
+                <h1>Simule seu Crédito com Segurança!</h1>
+            </div>
+            <div class="button">
+                <a href="#" type="button">Simular Grátis</a>
+            </div>
+            <div class="circle"></div>
+
+        </div>
+    </section>
+
+<!---------------------------------------------------Content Section ---------------------------------------------------------------------------------->
+    <section id="content">
+        <div class="container">
+            <header>
+                <h1>Conteúdos para melhorar a relação com seu dinheiro</h1>
+                <h4>Aprenda mais sobre o mundo do crédito e educação financeira</h4>
+            </header>
+
+            <div class="items">
+                <div class="left">
+                    <div class="items-img">
+                        <a href="https://blog.easycredito.com.br/2020/04/03/5-anos-do-easycredito-experiencias-conquistas-como-fintech/" type="button" target="_blank">
+                            <img src="https://blog.easycredito.com.br/wp-content/uploads/2020/04/EASY-CRÉDITO-6840-300x275.jpg">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="items-img">
+                        <a href="https://blog.easycredito.com.br/2020/05/07/entenda-como-funciona-o-easycredito/" type="button" target="_blank">
+                            <div class="background">
+                                <div class="background-image">
+                                    <img src="https://blog.easycredito.com.br/wp-content/uploads/2020/04/entenda-como-funciona-o-EasyCrédito-e1588877238752-300x162.png">
+                                </div>
+                                <footer>
+                                    <h4>Entenda como funciona a Easy Crédito</h4>
+                                </footer>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="items-img">
+                        <a href=https://blog.easycredito.com.br/2017/10/09/a-easycredito-e-segura/" type="button" target="_blank">
+                        <div class="background">
+                            <div class="background-image">
+                                <img src="https://blog.easycredito.com.br/wp-content/uploads/2017/10/o-easycredito-é-confiável--300x169.png">
+                            </div>
+                            <footer>
+                                <h4>A EasyCrédito é segura?</h4>
+                            </footer>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="items-img">
+                        <a href=https://blog.easycredito.com.br/2020/08/25/o-que-e-e-como-conseguir-um-emprestimo-consignado/" type="button" target="_blank">
+                        <div class="background">
+                            <div class="background-image">
+                                <img src="https://blog.easycredito.com.br/wp-content/uploads/2020/08/Empréstimo-Consignado-300x136.png">
+                            </div>
+                            <footer>
+                                <h4>O que é e como conseguir um Empréstimo Consignado?</h4>
+                            </footer>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="items-img">
+                        <a href=https://blog.easycredito.com.br/2019/08/16/o-que-significa-fintech/ type="button" target="_blank">
+                        <div class="background">
+                            <div class="background-image">
+                                <img src="https://blog.easycredito.com.br/wp-content/uploads/2019/08/o-que-significa-fintech-1-300x171.jpg">
+                            </div>
+                            <footer>
+                                <h4>O que significa Fintech?</h4>
+                            </footer>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!---------------------------------------------------Social Proof 2 Section ---------------------------------------------------------------------------->
+    <section id="social-proof-2">
+        <div class="container">
+            <div class="header">
+                <h1>EasyCrédito na Mídia</h1>
+                <p>Veja nossas principais matérias abaixo</p>
+            </div>
+
+            <div class="buttons">
+                <div class="button-item">
+                    <a href="https://expresso.estadao.com.br/economia-negocios/dinheiro-na-mao-e-digital/" type="button" target="_blank">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/media/midia-estadao-e690de360d39c832a98bbd3f84e8fa3d607bae4e1f62404b61352702a0d16bdf.png">
+                    </a>
+                </div>
+                <div class="button-item">
+                    <a href="https://startup.google.com/intl/pt-BR/stories/easycredito/" type="button" target="_blank">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/media/midia-google-2fb09aadfa834b40a9b5686a3f89e9efb9cdea3266488f316b1b3655b050db3e.png">
+                    </a>
+                </div>
+                <div class="button-item">
+                    <a href="https://invest.exame.com/mf/olx-entra-na-briga-por-oferta-de-credito-com-taxa-a-partir-de-199" type="button" target="_blank">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/media/midia-exame-205b573cb544399be74aa496460001c12df59289f6b1000e36edc12f0ae16b80.png">
+                    </a>
+                </div>
+                <div class="button-item">
+                    <a href="https://revistapegn.globo.com/Encontre-um-anjo/noticia/2016/09/encontre-um-anjo-impulsionou-sucesso-da-easycredito.html" type="button">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/media/midia-pegn-37584569c0b7219fcf8b35689437040507ff1bc34b6e167f0172fc37744e7539.png">
+                    </a>
+                </div>
+                <div class="button-item">
+                    <a href="https://opopular.com.br/noticias/economia/startups-s%C3%A3o-encorajadas-a-ficar-no-estado-1.1259123" type="button">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/media/midia-o-popular-9e09227bd8070259918150a8e91eb7ef4f88e1abd584140b6af59b51ea833b55.png">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!---------------------------------------------------Support Section ---------------------------------------------------------------------------------->
+    <section id="support">
+        <div class="container">
+            <header>
+                <h2>Ficou com alguma dúvida?</h2>
+            </header>
+
+            <div class="social-container">
+                    <a href="https://www.instagram.com/easycredito" class="social-button" target="_blank">
+                        <i class="fab fa-instagram fa-lg"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/easycredito" class="social-button" target="_blank">
+                        <i class="fab fa-linkedin-in fa-lg" ></i>
+                        <span> Linkedin</span>
+                    </a>
+                    <a href="https://www.facebook.com/easycredito" class="social-button" target="_blank">
+                        <i class="fab fa-facebook-f fa-lg"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.youtube.com/c/EasycreditoMe" class="social-button" target="_blank">
+                        <i class="fab fa-youtube fa-lg"></i>
+                        <span> Youtube</span>
+                    </a>
+                    <a href="https://easyc.zendesk.com/" class="social-button" target="_blank">
+                        <i class="fas fa-headset fa-lg"></i>
+                        <span> Acesse nossa central de ajuda</span>
+                    </a>
+            </div>
+
+
+            <div class="accordion-container">
+                <button class="accordion-button"><span>O que é e como funciona o EasyCrédito?</span></button>
+                <div class="accordion-section">
+                    <p>O nosso trabalho é facilitar o seu acesso a um crédito pessoal, portanto, para encontrar o melhor resultado de acordo com o seu perfil, exploramos diversos parceiros com ofertas de crédito e trazemos as opções para você. Ou seja, com apenas um cadastro você pode ter acesso a mais de 50 propostas em pouco tempo.<br><br> O próximo passo é escolher o melhor para você! :)</p>
+                </div>
+
+
+                <button class="accordion-button"><span>Preciso pagar pelos serviços do EasyCredito?</span></button>
+                <div class="accordion-section">
+                    <p>Não, nossos serviços são 100% gratuitos. Além disso, nós NUNCA pedimos depósitos para cotação ou contratação de serviços. Em caso de dúvida, entre em contato com nosso atendimento.</p>
+                </div>
+
+                <button class="accordion-button"><span>O EasyCrédito é seguro?</span></button>
+                <div class="accordion-section">
+                    <p>Totalmente! Para o EasyCrédito segurança é prioridade! Todos os dados registrados em nosso site são criptografados. Temos segurança em nível bancário.</p>
+                </div>
+
+                <button class="accordion-button"><span>É preciso ter cadastro para receber uma proposta de crédito?</span></button>
+                <div class="accordion-section">
+                    <p>Sim. Dessa forma conseguimos cruzar as informações que você disponibiliza com as ofertas que existem e trazermos melhores resultados para o seu perfil. É rápido e fácil.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+<!---------------------------------------------------Footer 1 ------------------------------------------------------------------------------------------>
+    <footer id="footer-1">
+        <div class="align-items">
+            <div class="container-1">
+                <div class="brand">
+                    <a href="https://easycredito.com.br/" target="_blank">
+                        <img src="https://cdn2.easycredito.com.br/assets/main/logo-white-c5277d165f307b5c0468036451e9941f16e4798c0cafb31ce4b9a21622187b59.png"/>
+                    </a>
+                </div>
+                <header class="text">
+                    <p>Easyc Promotora de Serviços Financeiros e Corretagem de Seguros Online Ltda. CNPJ/MF 24.081.684/0001-61</p>
+                </header>
+            </div>
+
+            <div class="container-2">
+                <div class="about">
+                    <h4>EasyCrédito</h4>
+                    <ul>
+                        <li><a href="https://easyc.zendesk.com/hc/pt-br" type="button" target="_blank">Ajuda</a></li>
+                        <li><a href="https://blog.easycredito.com.br/" type="button" target="_blank">Blog</a></li>
+                        <li><a href="https://jobs.kenoby.com/easycredito" type="button" target="_blank">Trabalhe conosco</a></li>
+                        <li><a href="https://easycredito.com.br/seja-nosso-parceiro" type="button" target="_blank">Seja nosso parceiro</a></li>
+                    </ul>
+                </div>
+                <div class="products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="https://easycredito.com.br/emprestimo-pessoal" type="button" target="_blank">Empréstimo Pessoal</a></li>
+                        <li><a href="https://easycredito.com.br/cartao-de-credito" type="button" target="_blank">Cartão de Crédito</a></li>
+                        <li><a href="https://easycredito.com.br/emprestimo-com-garantia-imovel" type="button" target="_blank">Refinanciamento de Imóvel</a></li>
+                        <li><a href="https://easycredito.com.br/emprestimo-com-garantia-automovel" type="button" target="_blank">Refinanciamento de Veículo</a></li>
+                        <li><a href="https://easycredito.com.br/parceiros/piki" type="button" target="_blank">PIKI Empréstimos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!---------------------------------------------------Footer 2  ------------------------------------------------------------------------------------------>
+    <footer id="footer-2">
+        <div class="container">
+            <h3>Informações Legais</h3>
+            <h6>Importante: Nossos serviços são gratuitos! Nunca enviamos qualquer tipo de cobrança para liberação de empréstimos e outros produtos.</h6>
+            <p>O domínio easycredito.com.br pertence à Easyc Promotora de Serviços Financeiros e Corretagem de Seguros Online Ltda - CNPJ: 24.081.684/0001-61 com sede a Rua S4, número 332, Quadra S12 Lote 11, andar 1. Setor Bela Vista, Goiânia - GO. CEP 74.823-450.</p>
+            <p>O EasyCrédito não é uma instituição financeira, somos uma plataforma online que facilita o acesso das pessoas a produtos e serviços financeiros ofertados por empresas credenciadas na plataforma. Atuamos como correspondente bancário de instituições financeiras nos termos da resolução 3.954, de 24 de fevereiro de 2011 do Banco Central do Brasil.</p>
+        </div>
+    </footer>
+<!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<script src="./app.js"></script>
+</body>
+</html>
